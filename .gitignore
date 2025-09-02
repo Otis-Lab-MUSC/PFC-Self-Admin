@@ -207,8 +207,9 @@ marimo/_lsp/
 __marimo__/
 
 # Other
-tests/plots/
-output/
+/tests/plots/
+/output/
+/data/
 
 # Database files
 *.db
