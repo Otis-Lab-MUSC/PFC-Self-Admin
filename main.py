@@ -1,3 +1,5 @@
+# main.py
+
 import os
 import sqlite3
 import pandas as pd
@@ -10,6 +12,7 @@ from src import create_db
 if __name__ == "__main__":
     db_path = "./output/PFC_Self-Admin.db"
 
+    # if the database doesn't exist, create it
     try:
         if not os.path.exists(db_path):
             create_db.main(
@@ -21,12 +24,14 @@ if __name__ == "__main__":
         print(f"Error creating database: {e}")
         exit()
 
+    # connect to the database
     try:
         conn = sqlite3.connect(db_path)
     except Exception as e:
         print(f"Error connecting to database: {e}")
         exit()
 
+    # select and parse data
     try:
         days_df = pd.read_sql_query("SELECT day_id, label FROM Days ORDER BY label", conn)
         days = days_df['label'].tolist()
@@ -43,6 +48,7 @@ if __name__ == "__main__":
         conn.close()
         exit()
 
+    # visualize data
     try:
         sns.set_style('white')
         fig, axes = plt.subplots(3, num_days, figsize=(15, 12), sharex='col', squeeze=False)
@@ -67,5 +73,7 @@ if __name__ == "__main__":
         print(f"Error plotting data: {e}")
         conn.close()
         exit()
+
+    # close the database
     finally:
         conn.close()
