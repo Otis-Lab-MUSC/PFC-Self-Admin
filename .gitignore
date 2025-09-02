@@ -209,3 +209,8 @@ __marimo__/
 # Other
 tests/plots/
 output/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3

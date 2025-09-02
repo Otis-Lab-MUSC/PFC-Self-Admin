@@ -495,15 +495,14 @@ def process_day(root, day, cur, conn, cluster_ids, used_cluster_ids):
     return used_cluster_ids
 
 
-def main():
+def main(data: str, output: str = "output", filename: str = "output.db"):
     """
     Main function to orchestrate the data processing pipeline.
     """
-    root = "../data"
-    db_path = "../output/PFC_Self-Admin.db"
-    os.makedirs("../output", exist_ok=True)
+    db_path = os.path.join(output, filename)
+    os.makedirs(output, exist_ok=True)
 
-    cluster_ids = load_cluster_ids(root)
+    cluster_ids = load_cluster_ids(data)
     used_cluster_ids = 0
 
     print("Initializing database...")
@@ -514,10 +513,10 @@ def main():
         setup_database(conn, cur)
 
         print("Processing data...")
-        days = get_days(root)
+        days = get_days(data)
 
         for day in days:
-            used_cluster_ids = process_day(root, day, cur, conn, cluster_ids, used_cluster_ids)
+            used_cluster_ids = process_day(data, day, cur, conn, cluster_ids, used_cluster_ids)
 
     finally:
         conn.close()
