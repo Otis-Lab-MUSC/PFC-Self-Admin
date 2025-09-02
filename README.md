@@ -7,8 +7,6 @@
 [![](https://img.shields.io/badge/@thejoshbq-grey?style=for-the-badge&logo=X)](https://x.com/thejoshbq)
 [![](https://img.shields.io/badge/Otis_Lab-grey?style=for-the-badge)](https://www.otis-lab.org/)
 
-<br>
-
 ---
 
 ## Overview
@@ -18,7 +16,7 @@ Within the repository, you will find the following:
 
 - `data` - contains the extracted data sorted by day > animal > FOV
 - `src` - contains utility modules used in the analysis pipeline
-- `analysis.ipynb` - the main analysis script
+- `main.py` - the main analysis script
 
 > Note: This analysis requires the `NSync2P` package, which you can find and install [here](https://github.com/otis-lab-musc/nsync2p).
 
@@ -28,7 +26,7 @@ To use this repository on your local machine:
 
 - **Clone the repository** - `git clone https://github.com/thejoshbq/PFC_Self-Admin_Analysis.git`
 - **Install the dependencies** - `pip install -r requirements.txt`
-- **Run the analysis** - `jupyter notebook analysis.ipynb`
+- **Run the analysis** - `python3 main.py`
 
 <br><br>
 <div align="center">
