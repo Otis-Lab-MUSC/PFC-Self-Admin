@@ -1,7 +1,7 @@
 # PFC Self-Administration
 ### A pipeline analysis of the prefrontal cortex region in mice under various reinstatement tests.
 
-*Code by*: Joshua Boquiren
+*Written by*: Joshua Boquiren
 
 [![](https://img.shields.io/badge/@thejoshbq-grey?style=for-the-badge&logo=github)](https://github.com/thejoshbq)
 [![](https://img.shields.io/badge/@thejoshbq-grey?style=for-the-badge&logo=X)](https://x.com/thejoshbq)
